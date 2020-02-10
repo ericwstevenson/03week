@@ -4,10 +4,7 @@ require_once('database.php');
 
 $query = 'SELECT customers.customerID, emailAddress, firstName, lastName, line1, city, state, zipCode, phone
 
-FROM customers
-
-	INNER JOIN addresses
-    ON customers.customerID = addresses.customerID
+FROM customers INNER JOIN addresses ON customers.customerID = addresses.customerID
     
 GROUP BY customerID, emailAddress, firstName, lastName, line1, city, state, zipCode, phone;';
 
